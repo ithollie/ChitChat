@@ -1,0 +1,77 @@
+<html>
+    <title>Finna</title>
+    <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">		
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+        <link rel="icon" id="favicon"  href="{{url_for('static', filename='indexImages/favicon.png')}}" type="image/x-icon">			
+		<link rel="apple-touch-icon" href="./favicon.png" >
+		<link rel="apple-touch-icon" sizes="180x180" href="./favicon.png" >		
+    <body>
+        <style>
+            .Rvideo-box 
+	{
+	background-color: #000000;
+	text-align: center;
+	padding: 0px;
+	margin: 0px auto 0px auto;
+	width: 100%;
+	max-width: 520px;
+	height: auto;
+	border: 1px solid #000000;
+	}
+
+.Rvideo-box video 
+	{
+	width: 100%;
+	height: auto;
+	display: block;
+	padding: 0px;
+	margin: 0px;
+	}
+
+.Rvideo-caption 
+	{
+	color: #FFFFFF;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+	padding: 8px 5px 8px 5px;
+	}
+
+.Rvideo-nosupport
+	{
+	color: #FFFFFF;
+	padding-top: 110px;
+	padding-bottom: 110px;
+	}
+
+        </style>
+        <div id="wrapper">
+            <h1>Finna</h1>
+            <h1>Be who you are</h1>
+      		<a href="{{url_for('login_route')}}">login</a>&nbsp;|&nbsp;<a href="#">Support</a>
+      		<a href="{{url_for('register_route')}}">register</a>&nbsp;|&nbsp;<a href="#">Support</a>
+            </div>
+            <!-- START HTML5 VIDEO -->
+            <h3>Ibrahim  Thollie</h3>
+<div class="Rvideo-box">
+    <video autoplay controls preload="auto" id="myvideo">
+    <source src="HTML5Video/yourvideo.mp4" type="video/mp4">
+    <source src="HTML5Video/yourvideo.m4v" type="video/mp4">
+    <source src="HTML5Video/yourvideo.ogv" type="video/ogg">
+    <source src="HTML5Video/yourvideo.webm" type="video/webm">
+    <div class="Rvideo-nosupport">
+    *Your web browser does not support HTML5 video*<br>
+    </div>
+    </video>
+    <div class="Rvideo-caption">
+    Sample HTML5 Responsive Video<br>
+    </div>
+</div>
+<!-- END HTML5 VIDEO -->
+
+     
+    </body>
+</html>

@@ -1,0 +1,191 @@
+#wrapper{
+     width:100%;
+}
+#tile{
+    display: none;
+}
+
+.decoration{
+    text-decoration:none;
+}
+#profile_picture{
+    background-color:;
+    height: 60%;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-color:black;
+    //background-image: url('https://cdn.glitch.com/d9630ef2-8ea2-4f57-83d0-e1c5dc5aebe5%2FPrimeMusicLandingPage_Slot2_1500x600._CB502263737_.jpg?1533588645610');
+}
+
+#wow ul li{
+    color:red;
+    border-radius:8px;
+    margin:30px;
+    padding:3px;
+    color:black;
+    height: 40px;
+    font-weight:bold;
+    font-style:normal;
+    font-size: large;
+    width:auto;
+    text-decoration: none;
+    background-color:#b7adad63;
+}
+#wow{
+    position: absolute;
+    left: 9%;
+    height:30%;
+}
+#wow ul{
+    display: inline-block;
+    width:100%;
+    height:100%;
+    padding:12px;
+    background:;
+    text-align: center;
+    visibility:hidden;
+    color:black;
+}
+.show{
+    visibility: visible;
+    width:100%;
+    height:42%;
+    background-color:white;
+}
+#header{
+    width:calc(calc(100vw + 1vh) + 0px);
+    left:0%;
+}
+#lol{
+    visibility: hidden;
+}
+#peace{
+    visibility: hidden;
+    display: inline;
+}
+.change{
+    width:900%;
+    margin:2px;
+}
+change{
+   
+   margin:2px;  
+}
+.increase{
+    width:200%;
+}
+.remove{
+    
+    visibility: hidden;
+}
+#indent{
+   display:none;
+}
+
+#playlist ul {
+    display:inline-flex;
+    height: 100%;
+    padding:3px;
+    margin:17px;
+    background-color:white;
+    width:auto;
+}
+#next_near{
+    height: 70%;
+    background-color:red;
+}
+#playlist {
+    height: 38%;
+    padding: 0%;
+    padding-left: 0%;
+    color:white;
+    text-align:center;
+    background-color:white;
+
+}
+#firsti{
+    visibility:hidden;
+}
+.max-width{
+    width:110%;
+}
+#songs h3{
+    color:black;
+}
+#gap{
+    visibility:hidden;
+    width:60%;
+    float:left;
+    height:40%;
+}
+
+#vid{
+    width:100%;
+    height:60%;
+}
+
+#videos{
+    width:100%;
+    height:100%;
+}
+.max-height{
+    height:100%;
+}
+.max-width_one{
+    width:100%;
+}
+
+.max-height_one{
+    height:100%;
+}
+
+#that{
+    visibility:hidden;
+}
+
+#next-near{
+    height:50%;
+}
+
+#search{
+    
+  height:11%;
+}
+#wrapper{
+    top:0px;
+}
+#main{
+    color:red;
+}
+.container-1{
+    visibility: hidden;
+}
+#tone{
+    height:2%;
+}
+#tone1{
+    visibility: hidden;
+}
+#te{
+    width:calc(calc(100vw + 1vh) + 0px);
+    height:5%;
+}
+#liste{
+    width:100%;
+    background-color:brown;
+}
+#listp{
+    width:100%;
+    clear:both;
+    height:100%;
+    display:none;
+    background-color:white;
+}
+#tone{
+    visibility: hidden;
+}
+#listshow{
+   display: block;
+   height:24%;
+   background-color:white;
+}

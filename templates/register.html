@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>register</title>
+<link rel="stylesheet" href="{{url_for('static',filename='css/login.css')}}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+<script src="{{url_for('static', filename='javascript/system.js')}}"></script>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="Absolute-Center is-Responsive">
+      <!-- <div id="logo-container"></div> -->
+      <div class="col-sm-12 col-md-10 col-md-offset-1">
+        <form  id="loginForm" action="{{url_for('register_process')}}" method="post">
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input class="form-control" type="text" name="firstname" placeholder="Firstname"/>
+          </div>
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input class="form-control" type="text" name="lastname" placeholder="Lastname"/>
+          </div>
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input class="form-control" type="text" name="email" placeholder="email"/>
+          </div>
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input class="form-control" type="password" name="password" placeholder="password"/>
+          </div>
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input class="form-control" type="password" name="repeat_password" placeholder="repeat_password"/>
+          </div>
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input class="form-control" type="text" name="birth" placeholder="birth"/>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"> I agree to the <a href="#">Terms and Conditions</a>
+            </label>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-def btn-block">Signup</button>
+          </div>
+          <div class="form-group text-center">
+            <a href="#">Forgot Password</a>&nbsp;|&nbsp;<a href="#">Support</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

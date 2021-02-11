@@ -1,0 +1,194 @@
+/*
+<!--=====| menu icon |====-->
+<div id="menuIcon">
+	<div id="burger">
+		<div id="topLine" class="burgerLine"></div>
+		<div id="middleLine" class="burgerLine"></div>
+		<div id="bottomLine" class="burgerLine"></div>
+	</div>
+	<div id="menuGlass"></div>
+</div>
+<!--=====| END menu icon |====-->
+*/
+#menuIconAssembly{
+	position: absolute;
+	height: 1.25rem;
+	width: calc(1.25rem * 1.41421356237);/* 1.41421356237 = sqrt 2 */
+	right: 1.125%;
+	top: 2%;
+	z-index: 10;
+}
+#menuGlass{
+	position: absolute;	
+	/*
+	height: 120%;
+	width: 120%;
+	*/
+	height: 2rem;
+	width: calc(2rem * 1.41421356237);/* 1.41421356237 = sqrt 2 */	
+	margin: auto;
+	top:0;
+	bottom:0;
+	left: 0;
+	right: 0;	
+	cursor: pointer;
+}
+
+#menu{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	/*
+	width: 77%;
+	height: 65%;
+	*/
+	width: 100%;
+	height: 100%;	
+	border-radius: 0.5rem;
+	box-shadow: 0.125rem 0.125rem 0.5rem gray;
+	transition: all 0.55s ease;
+	visibility: hidden;
+	opacity: 0;
+	background-image: linear-gradient(315deg, #aaa, white);  
+	z-index: 8;
+}
+.burgerLine{
+	position: absolute;
+	height: 0.38rem;
+	width: 100%;
+	background-color: rgba(119, 196, 196, 1);
+  box-shadow: -1px -1px 0 gray;
+	transition: all 0.5s ease;
+	opacity: 0.7;
+}
+
+#topLine{
+	position: absolute;
+	top: -0.19rem;
+	transform-origin: left;
+	/*transform: rotateZ(45deg);*/
+}
+
+#middleLine{
+	position: absolute;
+	margin: auto;
+	top:0;
+	bottom:0;
+	left: 0;
+	right: 0;
+	/*transform: rotateY(90deg);*/
+}
+
+#bottomLine{
+	position: absolute;
+	bottom: -0.19rem;
+	transform-origin: left;
+	/*transform: rotateZ(-45deg);*/	
+}
+
+#uploadProgressBar{
+	position: absolute;
+	top: 0;
+	width: 0%;
+	height: 3px;
+	background: blue;
+	box-shadow: 0 1px 0 white;
+	visibility: visible;
+	z-index: 9;
+}
+
+#fileSelectorAssembly{
+	position: absolute;
+  height: 7vh;
+  width: 50%;
+	margin: auto;
+	top: 10%;
+	left: 0;
+	right: 0;
+  text-align: center;
+  border-radius: 3.5vh;
+
+}
+
+ #fileSelector{
+  display: inline-block;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+  text-align: center; 
+  border-radius: 3.5vh;
+  outline: none;
+  opacity: 0; 
+  cursor: pointer;
+}
+
+#fileSelectorBackground{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+  text-align: center; 
+  border-radius: 3.5vh;
+  outline: none; 
+  background-image: linear-gradient(-20deg, lightgray, white, lightblue);
+  box-shadow: 0.125rem 0.125rem 0.25rem black;  
+}
+
+.menuButton{
+	position: absolute;
+  height: 7vh;
+  width: 50%;
+	margin: auto;
+	left: 0;
+	right: 0;
+  text-align: center;
+  border-radius: 3.5vh;	
+  outline: none; 
+  background-image: linear-gradient(-20deg, lightgray, white, lightblue);
+  box-shadow: 0.125rem 0.125rem 0.25rem black; 
+}
+
+.menuButtonText{
+  display: inline-block;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; 
+  border-radius: 3.5vh;
+  width: 100%;
+  outline: none;
+  text-shadow: 0 1px 0 white;
+}
+
+#fileDeleterGlass{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+  border-radius: 3.5vh;	
+  cursor: pointer;  
+}
+
+#fileDeleterAssembly{
+	position: absolute;
+  height: 7vh;
+  width: 50%;
+	margin: auto;
+	top: 20%;
+	left: 0;
+	right: 0;
+  text-align: center;
+  border-radius: 3.5vh;
+}
+
+#fileDeleterBackground{
+	position:absolute;
+	width: 100%;
+}
+

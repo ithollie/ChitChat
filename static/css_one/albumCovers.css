@@ -1,0 +1,33 @@
+/*
+<!--==========| Album Covers |=============-->
+<div id="albumCoverSection">
+  <div id="lastAlbumCover" class="albumCover"></div>
+  <div id="nextAlbumCover" class="albumCover"></div>
+  <div id="currentAlbumCover" class="albumCover"></div>
+</div>
+*/
+#albumCoverSection{
+	position: absolute;
+	//top: 43%;
+  bottom: 26%;
+	left: 50%;
+	transform: translate(-50%);
+	width: 90%;
+	max-width: 820px;  
+	height: 65%;
+  /*outline: 1px dotted red;*/
+}
+#currentAlbumCover{
+	position: absolute;
+  margin: auto;
+	left: 0%;
+  right: 0;
+	width: 88%;
+	height: 100%; 
+  cursor: pointer;
+  transition: all 0.25s ease;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-position: center;  
+}

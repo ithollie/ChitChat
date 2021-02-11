@@ -1,0 +1,99 @@
+#volumeTouchZone{
+	position: absolute;
+	height: 48%;
+	max-height: 17rem;
+	width: 2rem;
+	border-radius: 0.75rem;
+	/*outline: 1px solid cyan;*/
+	right: 1%;
+	top: 38%;
+	transform: translateY(-50%);
+	visibility: hidden;
+	/*	z-index: 10;*/	
+}
+
+#volumeBarContainer{
+	position: absolute;
+	height: 100%;
+	width: 0.5rem;
+	border-radius: 0.25rem;
+	/*outline: 1px solid cyan;*/
+	left: 40%;
+	top: 50%;
+	transform: translateY(-50%);
+	background-image: linear-gradient(hsla(0, 50%, 50%, 0.15), hsla(60, 50%, 50%, 0.15), hsla(120, 50%, 50%, 0.15)), linear-gradient(-90deg, white, lightgray, gray);
+
+}
+
+#volumeBar{
+	position: absolute;
+	background-color: orange;
+	border-radius: 0.25rem;	
+	height: 25%;
+	width: 100%;
+	bottom: 0;
+	background-image: linear-gradient(90deg, white, #ff6c00, gray);	
+}
+
+#volumeBead{
+	position: absolute;
+	left: 50%;
+	top: -0.5rem;
+	transform: translate(-50%);
+	height: 1.75rem;
+	width: 1.75rem;
+	border-radius: 50%;
+	background-image: url(new_images/playing3-200.png), radial-gradient(
+		circle at top left,
+		white,
+		/*transparent,*/		
+		#666
+	);
+	background-size: 75% 75%, contain;
+	background-position: center, center;
+	background-repeat: no-repeat;
+	background-color: transparent;	
+	cursor: pointer;
+}
+
+#muteButton{
+	position: absolute;
+	height: 2.125rem;
+	width: 2.125rem;
+	border-radius: 50%;
+	background-image: url(new_images/playing3-200.png), radial-gradient(
+		circle at top left,
+		white,
+    	white,
+		transparent,
+		rgba(119, 196, 196, 1),
+		#333
+	);
+	background-size: 65% 65%, contain;
+	background-position: center, center ;
+	background-repeat: no-repeat;
+	background-color: rgba(119, 196, 196, 1);
+	
+	cursor: pointer;
+	right: 0.9%;
+	bottom: 21%;
+	opacity: 0.75;
+	//box-shadow: 0.125rem 0.125rem 0.25rem black;
+	/*z-index: 10;*/	
+}
+
+#hiddenVolumeControl{
+  opacity: 0; /*Umm ... its hidden :)*/
+  visibility: hidden; /* made visible on startup if volume is controlable*/  
+	position: absolute;
+	height: 48%;
+	max-height: 17rem;
+	width: 2rem;
+	border-radius: 1rem;
+	background-image: linear-gradient(hsla(0, 50%, 50%, 0.15), hsla(60, 50%, 50%, 0.15), hsla(120, 50%, 50%, 0.15)), linear-gradient(-90deg, white, lightgray, gray);
+	left: 1%;
+	top: 38%;
+	transform: translateY(-50%);
+  cursor: pointer;
+  border-right: 2px solid white;
+}

@@ -1,0 +1,114 @@
+/**
+ * Our standard colors:
+ * 
+ * Teal: #1ea8aa
+ * Orange: #ff6c00
+ */
+* {
+	box-sizing: border-box;
+}
+/*html{*/
+/*	font-size: calc(calc(0.5vh + 0.5vw) + 12px);*/
+/*	box-sizing: border-box;*/
+/*	tap-highlight-color: rgba(0,0,0,0);	*/
+/*	user-select: none;	*/
+/*}*/
+
+/*html, body {*/
+/*	position: fixed;	*/
+/*	height: 100%;*/
+/*	width: 100%;*/
+/*	padding: 0;*/
+/*	margin: 0;*/
+/*	overflow: hidden;*/
+/*	background-color: lightgray;*/
+/*	background-image: linear-gradient(315deg, #aaa, white);*/
+/*}*/
+
+#songBanner{
+	position: absolute;
+	top: 2%;
+	left: 50%;
+	transform: translate(-50%);
+	width: 75%;
+	height: 10%;
+	/*outline: 2px dotted green;*/	
+
+}
+#songSelector{
+	display: inline-block;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	/*
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	*/
+	/*outline: 1px solid red;*/
+	text-align: center;	
+	opacity: 0;	
+	cursor: pointer;
+}
+option{
+	/*visibility: visible;*/	
+}
+#controls{
+	/*  start center button*/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	/* end center button*/
+}
+
+.button {
+	-webkit-transition-duration: 0.4s;	/* Safari */
+	-moz-transition-duration: 0.4s;		/* Firefox */
+	-o-transition-duration: 0.4s;		/* Opera */
+	
+	background-color: lightblue; /* PIT Blue #1f2059; */
+	border: none;
+	border-radius: 0.5rem;
+	box-shadow: 0.25rem 0.25rem 0.5rem black;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 1rem;
+	margin: 4px 2px;
+	outline: none;
+	padding: 0.5rem 1rem;
+	text-align: center;
+	text-decoration: none;
+	transition-duration: 0.4s;
+	color: black;	
+}
+
+
+#testButton{
+	height: 3rem;
+	width: 7rem;
+	color: black;
+	text-shadow: 0 2px 0 white;
+}
+
+#songTitle{
+	position: absolute;
+	width: 100%;
+	font-size: 1rem;
+	text-align: center;
+	text-shadow: 0 1px 0 white;
+	margin: auto;
+	top: 3%;
+}
+
+
+
+
+
+
+
+
+
+
+
+

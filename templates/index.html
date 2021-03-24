@@ -1,0 +1,457 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+      <!-- VIBE INDEX HTML -->
+
+      <!-- META -->
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!-- TITLE -->
+      <title>Cchat</title>
+      <!--  TILE  ENDS  -->
+
+      <!-- Modal Structure -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      
+      <!-- ICON -->
+      <link rel="shortcut icon" href="{{ url_for('static', filename='uploads/icon.png') }}">
+      
+      <!-- STYLESHEETS -->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+      <link rel="stylesheet" href="{{url_for('static',filename='css/comments.css')}}">
+      <link rel="stylesheet" href="{{url_for('static',filename='css/pop.css')}}">
+      <link rel="stylesheet" href="{{url_for('static',filename='search/search.css')}}">
+      <link rel="stylesheet" href="{{url_for('static',filename='css/normalize.css')}}">
+      <!-- END  STYLE -->
+
+      <!-- css -->
+      <link rel="stylesheet" href="{{url_for('static',filename='css/login.css')}}">
+
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      
+      <!-- Modal media jquery -->
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    	
+      <!-- Modal media queries -->
+      <link rel='stylesheet' media='screen and (min-width: 164px) and (max-width: 900px)' href="{{url_for('static',filename='css/convert.css')}}" />
+      <link rel="stylesheet" media='screen and (min-width: 163px) and (max-width: 482px)' href="{{url_for('static',filename='css/small.css')}}">
+      <link rel='stylesheet' media='screen and (min-width: 701px) and (max-width: 900px)' href='css/medium.css' />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      
+      <!-- javascripts links -->
+      <script src="{{url_for('static', filename='javascript/desk1.js')}}"></script>
+  
+  </head>
+  <body>
+  <!-- wrapper -->
+  <div id="wrapper" style="background-color:white">
+
+      <div id="te" class="main_notification" style="background-color:;height:20px;padding-top:0px;position:relative"><a id="num" style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"></a><a id="num" style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;">
+                  <ul>
+                      <li id="title"><a id="num" style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"></a><a id="num" style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"></a><a class=" modal-trigger waves-effect waves-light " style="text-transform: ;color:#ff25d0; text-decoration:none;background-color:;font-weight: bold;" ><i class="material-icons">home</i></a></li>                
+                      <li id="messages"><a class="waves-effect waves-light " style="text-transform: lowercase;color:#26a69a; text-decoration:none;background-color:;font-weight: bold;" href="/message"><i class="material-icons">message</i>0</a></li>
+                      <li id="friends_accepted"><a class="waves-effect waves-light " style="text-transform: lowercase;color:blue; text-decoration:none;background-color:;font-weight: bold;" href="/friends"><i class="material-icons">people</i>2</a></li>
+                      <li id="friendRequest"><a class="waves-effect waves-light " style="text-transform: lowercase;color:green; text-decoration:none;background-color:;font-weight: bold;" href="/request"><i class="material-icons">feedback</i>2</a></li>
+                      <li id="logout"><a class="waves-effect waves-light" style="text-transform: lowercase;color:red; text-decoration:none;background-color:;font-weight: bold;" href="/logout">logout</a></li>
+                  </ul>
+        </div>
+      
+      <!-- inwork -->
+      <div id="inwork" class="inwork" style="margin-top:9px;width:100%; height:20%;background-color:;position:relative;text-align:center">
+          <div id="te" style="background-color:">
+              <ul style="text-align:center;">
+                  <li><img class=" item responsive-img" style="border-radius:10%;width: 18%;height: 9%;" src="/static/uploads/reg/boys.jpg" alt=""></li>
+                  <li><img class=" item responsive-img" style="border-radius:10%;width: 18%;height: 9%;" src="/static/uploads/reg/boys.jpg" alt=""></li>
+                  <li><img class=" item responsive-img" style="border-radius:10%;width: 18%;height: 9%;" src="/static/uploads/reg/boys.jpg" alt=""></li>
+                  <li><img class=" item responsive-img" style="border-radius:10%;width: 18%;height: 9%;" src="/static/uploads/reg/boys.jpg" alt=""></li>
+
+              </ul>
+            </div>
+       </div>
+
+       <div id="profilepicture" class="modal" tabindex="0" style="height:80%; width:80%;text-align:center; border-radius:20px">
+          <img  class="modal-trigger"  src="static/uploads/{{user['img']}}" alt=""   class="responsive-img" style="border-radius:20px; border-color: #0000ff;" style="padding: 7px;width:60%;height:30px;"  href="#profilepicture">
+      </div>
+
+      <!-- inwork ends  -->
+      <div id="vib" style="background-color:red" data-key-author="Ibrahim " data-key-name="money" data-key-email="ithollie@yahoo.com" data-key-id="22" data-key-commenter="" data-key-post="22" class="send  waves-effect waves-light  btn" >
+          <a style="font-weight:400; font-size:12px;color:white" href="/blogform"><strong>Cchat</strong> </a>
+      </div>
+      
+       <!-- MODEL 1  -->
+      <div id="modal1" class="modal" tabindex="0" style="height:50%; width:100%;text-align:center">
+        
+          <!-- TITLE   -->
+          <div id="title"  data="{{posts['title']}}" style="margin:center; height:10%;background-color:#ffffff">
+            	  
+                <!-- TILE -->
+                <ul id="post-key-post-email" data-key-post-name="{{posts['title']}}" data-key-post-email="{{posts['email']}}" data-key-post-id="{{posts['id']}}">   
+                      <li data-key-author="{{posts['author']}}" data-key-name="{{posts['title']}}" data-key-email="{{posts['email']}}" data-key-id="{{posts['id']}}"id="createRequests" data-key-receiver="{{posts['id']}}" data-key-post="{{posts['id']}}" class="requests waves-effect modal-trigger" href="#modal1" style="color:black; background-color:"><a style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"><i class="material-icons">mode_comment</i></li>
+                      <li data-key-author="{{posts['author']}}" data-key-name="{{posts['title']}}" data-key-email="{{posts['email']}}" data-key-id="{{posts['id']}}"id="requests" data-key-receiver="{{posts['id']}}" data-key-post="{{posts['id']}}" class="requests waves-effect   "  style="margin:10px;color:black; background-color:"><a style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"><i class="material-icons">import_export</i></li>
+                      <li data-key-author="{{posts['author']}}" data-key-name="{{posts['title']}}" data-key-email="{{posts['email']}}" data-key-id="{{posts['id']}}"id="comments" data-key-commenter=""  data-key-post="{{posts['id']}}" class="waves-effect  modal-trigger" href="#modal1" style="margin:10px;color:red; background-color:"><a style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"><i class="material-icons">comment</i><span id="spcomments">{{posts['numberOfcomments']}}</span></a></li>
+                      <li data-key-author="{{posts['author']}}" data-key-name="{{posts['title']}}" data-key-email="{{posts['email']}}" data-key-id="{{posts['id']}}"id="likes"    data-key-likes=""   data-key-post="{{posts['id']}}" class="waves-effect   "  style="margin:10px;color:black; background-color:"><a id="num" style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"><i class="material-icons">thumb_up</i><span id="splikes">{{posts['likes']}}</span></li>
+                      <li data-key-author="{{posts['author']}}" data-key-name="{{posts['title']}}" data-key-email="{{posts['email']}}" data-key-id="{{posts['id']}}"id="dislikes" data-key-dilikes=""  data-key-post="{{posts['id']}}" class="waves-effect  "  style="margin:10px;color:white; background-color:"><a id="num" style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"><i class="material-icons">thumb_down</i><span id="spdislikes">{{posts['dislikes']}}</span></li>
+                      <li data-key-author="{{posts['author']}}" data-key-name="{{posts['title']}}" data-key-email="{{posts['email']}}" data-key-id="{{posts['id']}}"id="delete" data-key-delete=""  data-key-post="{{posts['id']}}" class="waves-effect  "  style="margin:10px;color:white; background-color:"><a id="num" style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"><i class="material-icons">delete</i><span id="delete"></span></li>
+
+                </ul>
+                <!-- TITLE END  -->
+
+           </div>
+          <!-- END  TITLE  -->
+
+      </div>
+       <!-- ends -->
+
+      <!-- MODEL VIBE STARTS -->
+      <div id="modalvibe" class="modal" tabindex="0" style="height:50%; width:100%;text-align:center">
+          
+        <div id="" style="color:white; font-size:24px; font-weight:300">{{point}}</div>
+
+            <div id="state" style="padding-top: 1px;background-image: url({{url_for('static', filename='images/.jpg')}}); background-color:;text-align:center; width:100%; height:100%">
+            <div id="stt" style="padding-top: 5px;width:60%; height:100%; background-color:; text-align:center;margin:auto">
+              <div class="container" style="background-color:red">
+                <div class="row">
+                  <div class="Absolute-Center is-Responsive">
+                    
+                    <div class="col-sm-12 col-md-10 col-md-offset-1">
+                      <form  id="loginForm" action="{{url_for('blog')}}" method="post" enctype ="multipart/form-data">
+                        <div class="form-group input-group">
+                          <span style="color:white" class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                          <input style="border-radius: 10px;padding-left:12px;background-color:white" class="form-control" type="text" name="title" placeholder="title" value="" />
+                        </div>
+                        <div class="form-group input-group">
+                          <span style="color:white" class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                          <input style="border-radius: 10px;padding-left:12px;background-color:white" class="form-control" type="text" name="author" placeholder="Author" value="{{author}}" required />
+                        </div>
+                        
+                        <div class="form-group input-group">
+                          <span style="color:white" class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                          <input style="border-radius: 10px;padding-left:12px;background-color:white" class="form-control" type="email" name="email" placeholder="email" value="{{email}}"   required />
+                        </div>
+                        <div class="form-group input-group">
+                          <span style="color:white" class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                          <textarea style="width:30%; border-radius: 10px;padding-left:12px;background-color:white" class="form-control" type="text" cols="80" name="description" placeholder="Description"  required /></textarea>
+                        </div>
+                        <div class="form-group input-group">
+                          <span style="color:white" class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                          <input style="width:30%; border-radius: 0px;padding-left:12px;background-color:white" class="form-control" type="file" cols="80" name="file"  />
+                        </div>
+                        </div>
+                        <div class="form-group input-group">
+                          <span style="color:white" class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                          <input style="border-radius: 10px;padding-left:12px;background-color:white" class="form-control" type="text" name="vibeusers" placeholder="vibesuers" value="" />
+                        </div>
+                        <div class="form-group">
+                          <button type="submit" class="btn btn-def btn-block">Submit</button>
+                        </div>
+                      
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>		
+        </div>
+
+      </div>
+       <!-- MODEL VIBE END  -->
+      
+      <!-- MODEL 2  -->
+      <div id="modal2" class="modal open" tabindex="0" style="z-index: 1003; display:none; opacity: 1; top: 10%; transform: scaleX(1) scaleY(1);">
+                <div id="state" style="padding-top: 1px;background-image: url(/static/images/.jpg); background-color:;text-align:center; width:100%; height:100%">
+                          <div id="stt" style="padding-top: 5px;width:60%; height:100%; background-color:; text-align:center;margin:auto">
+                            <div class="container" style="background-color:">
+                                <div class="row">
+                                    <div class="Absolute-Center is-Responsive">
+
+                                        <div class="col-sm-12 col-md-10 col-md-offset-1">
+                                            <form id="loginForm" action="/picture" method="post" enctype="multipart/form-data">
+                                                <div class="form-group input-group">
+                                                    <span style="color:white" class="input-group-addon"><i class="glyphicon glyphicon-lock">select image</i></span>
+                                                    <input style="width:100%; border-radius: 0px;padding-left:12px;background-color:white" class="form-control" type="file" cols="80" name="file" required/>
+                                                </div>
+                                                <div class="form-group">
+                                                    <button type="submit" class="btn btn-def btn-block">Submit</button>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                   </div>
+                </div>
+      </div>
+      <!--  END  OF  2 -->
+
+      <!-- HEADER  -->
+      <div  id="header" data-login-name="{{firstname}}" data-login-email="{{email}}" data-login-id="{{id}}" style="height: 100px;  background-position: 100px 5px;  background-size: 150px;text-align:center; background-color:white !important;background-image: url({{url_for('static', filename='images/ity.jpg')}});background-repeat:no-repeat;background-size:cover;background-position:center;" class="carousel-item red white-text" href="#one!">
+          
+          <!-- TOPNAV  END -->
+
+         
+          <!-- END OF  NOTIFICATION -->
+
+          <!-- NOTIFICATION -->
+          <div  id="te" style="background-color:white; padding-top: 0px;marggin:0px;position:relative">
+            	<ul>
+                 <li><a class="modal-trigger" id="pasue" style="text-transform: lowercase;color:black; text-decoration:none;font-weight: bold;" href="#modal2"><i class=" small material-icons ">add_a_photo</i></a></li>
+              </ul>
+  		    </div>
+
+          <!-- NOTIFICATION END  -->
+
+          <!-- IMAGES -->
+          <div id="imagess" style="background-color:white;margin: 4px;border-radius: 12px;">
+                 {% if  user['image'] == "1" %}
+
+                    <img  id="resize" class="modal-trigger"  src="static/uploads/{{user['img']}}" alt=""  class="responsive-img"  style="height: auto;box-shadow: 0px 0px 2px 0px white;opacity: 0.9;border-radius: 12px;" href="#profilepicture">
+
+                 {% else %}
+                    <img src="{{user['img']}}" alt="" class="responsive-img" style="    border-radius: 20%;opacity: 0.9;">
+                {% endif %}
+
+            </div>
+
+            <div  id="te" style="background-color:white; padding-top: 0px;marggin:0px;position:relative">
+            	<ul style="background:white">
+            			<li><a class="waves-effect waves-light  #03a9f4" style="text-transform: lowercase;color:; text-decoration:none;background-color:;font-weight: bold;opacity: 0.9;" >{{user['firstname']}}</a></li>
+              </ul>
+  		    
+          </div>
+          <!-- END  OF  IMAGES -->
+        
+      </div>
+       <!-- header ends  -->
+      <div id="onmind" style="text-align:center; font-weight: bold;font-family: Times, Times New Roman, Georgia, serif;">
+            <h2  style="color:black; font-weight: bold;;font-family: Times, Times New Roman, Georgia, serif;"  > what on  your mind </h2>
+      </div>
+      <!-- start of main IMAGE PAGE  -->
+      <div id="mainImage" style="text-align:center;margin: 4px;">
+
+                <!-- BIG  IMAGES -->
+                <img  id="psot_img" class="modal-trigger"  src="static/uploads/{{user['img']}}" alt=""  class="responsive-img" style="height:240px;border-color: #0000ff;height: auto;opacity:;"  href="#profilepicture">
+                <!-- BIG IMAGES  -->
+
+                <!-- TITLE -->
+                <div id="title" data="money" style="margin:center; height:10%;background-color:whiter;auto;opacity: 0.8;">
+            	          <ul id="post-key-post-email" data-key-post-name="money" data-key-post-email="ithollie@yahoo.com" data-key-post-id="22">
+                              
+                              </a><li data-key-author="Ibrahim " data-key-name="money" data-key-email="ithollie@yahoo.com" data-key-id="22" id="createRequests" data-key-receiver="22" data-key-post="22" class="requests waves-effect modal-trigger" href="#modal1" style="color:black; background-color:"><a style="color:green; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"></a><a style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"><i class="material-icons">mode_comment</i></a></li><a style="color:red; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;">
+                              </a><li data-key-author="Ibrahim " data-key-name="money" data-key-email="ithollie@yahoo.com" data-key-id="22" id="requests" data-key-receiver="22" data-key-post="22" class="requests waves-effect   " style="margin:10px;color:black; background-color:"><a style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"></a><a style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"><i class="material-icons">import_export</i></a></li><a style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;">
+                              </a><li data-key-author="Ibrahim " data-key-name="money" data-key-email="ithollie@yahoo.com" data-key-id="22" id="comments" data-key-commenter="" data-key-post="22" class="waves-effect  modal-trigger" href="#modal1" style="margin:10px;color:red; background-color:"><a style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"></a><a style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"><i class="material-icons">comment</i><span id="spcomments">0</span></a></li>
+                              <li data-key-author="Ibrahim " data-key-name="money" data-key-email="ithollie@yahoo.com" data-key-id="22" id="likes" data-key-likes="" data-key-post="22" class="waves-effect   " style="margin:10px;color:black; background-color:"><a id="num" style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"><i class="material-icons">thumb_up</i><span id="splikes">5</span></a></li><a id="num" style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;">
+                              </a><li data-key-author="Ibrahim " data-key-name="money" data-key-email="ithollie@yahoo.com" data-key-id="22" id="dislikes" data-key-dilikes="" data-key-post="22" class="waves-effect  " style="margin:10px;color:white; background-color:"><a id="num" style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"></a><a id="num" style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"><i class="material-icons">thumb_down</i><span id="spdislikes">2</span></a></li><a id="num" style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;">
+                              </a><li data-key-author="Ibrahim " data-key-name="money" data-key-email="ithollie@yahoo.com" data-key-id="22" id="delete" data-key-delete="" data-key-post="22" class="waves-effect  " style="margin:10px;color:white; background-color:"><a id="num" style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"></a><a id="num" style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"><i class="material-icons">delete</i><span id="delete"></span></a></li><a id="num" style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"></a>
+                          
+                          </ul>
+                </div>
+                <!-- END  OF  TITLE -->
+      </div>
+
+      <!-- MAIN  PAGE -->
+      <div id="vidou" style="margin: 4px; width:100%;text-align:center;">
+          <iframe width="570" float="center" height="315" src="https://www.youtube.com/embed/NqXO6aF_WxE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    	</div>
+
+     <div id="stateid" style=" background-size: 150px;padding-top: 1px;background-image: url({{url_for('static', filename='images/.jpg')}}); background-color:white;text-align:center; width:100%; height:35%">
+
+  			    {% block content %}
+  			    {% for posts in blogs %}
+
+                <div id="contents" data-key-author="{{posts['author']}}" data-key-name="{{posts['title']}}" data-key-email="{{posts['email']}}" data-key-id="{{posts['id']}}"style="float:left;width:100%; height:100%; background-color:#f1eded; text-align:center;margin:auto; position:relative">
+
+                        <div  id="two" style="height:px" >
+                            <div id="" data-key="{{posts['id']}}" style="width:100%;margin:center; height:5%;background-color:#ffffff">
+                              <ul class="tubs" style="background-color:#ececec">
+                                <li  style="margin:12px;color:black;font-weight:500;margin-bottom: 15px;
+                                    font-family: Sofia, sans-serif;
+                                
+                                  -webkit-font-smoothing: antialiased;
+                                  font-size:8px;
+                                  line-height: 1.66667;font-style: " data-key-author="{{posts['author']}}" data-key-name="{{posts['title']}}" data-key-email="{{posts['email']}}" data-key-id="{{posts['id']}}" id="blogeauthor" data-key="{{posts['id']}}" class="waves-effect  bt" style="margin:9px; color:; background-color:white"><a style="font-weight: bold;color:black; text-decoration:none; font-size:calc(calc(1.5vw + 1vh) + 0px); text-transform: lowercase;" href="{{url_for('author_profile')}}">{{posts['author']}}</a></li>
+                                <li style="margin:12px;color:black;font-weight:500;margin-bottom:px;
+                                    font-family: Sofia, sans-serif;
+                                
+                                  -webkit-font-smoothing: antialiased;
+                                  font-size:8px;
+                                  line-height: 1.66667;font-style: " data-key-author="{{posts['author']}}" data-key-name="{{posts['title']}}" data-key-email="{{posts['email']}}" data-key-id="{{posts['id']}}"id="blogname"    data-key="{{posts['id']}}"  class=" waves-effect  bt "  style="margin:9px; color:; background-color:white"><a style="font-weight: bold;color:black;text-decoration:none; font-size:calc(calc(1.5vw + 1vh) + 0px); text-transform: lowercase;" >{{posts['title']}}</a></li>
+                                <li style="margin:12px;color:black;font-weight:500;margin-bottom:px;
+                                    font-family: Sofia, sans-serif;
+                                
+                                  -webkit-font-smoothing: antialiased;
+                                  font-size:8px;
+                                  line-height: 1.66667;font-style: " data-key-author="{{posts['author']}}" data-key-name="{{posts['title']}}" data-key-email="{{posts['email']}}" data-key-id="{{posts['id']}}"id="blogemail"   data-key="{{posts['id']}}"  class=" waves-effect  bt"  style="margin:9px; background-color:white" style="font-weight: bold;color:black; background-color:"><a style="color:black;font-weight:700; text-decoration:none; font-size:calc(calc(1.5vw + 1vh) + 0px); text-transform: lowercase;">{{posts['email']}}</a></li>
+                              </ul>
+                            </div>
+
+                        </div>
+
+                        <h2 style="text-align:center; font-weight: bold;font-family: Times, Times New Roman, Georgia, serif;">{{posts['title']}}</h2>
+                        
+                        <img id="psot_img" style="border-radius:12px;  box-shadow: 10px 10px white;height:auto" src="static/uploads/{{posts['img']}}" alt="" class="responsive-img">
+                        
+                        <div id="inwork_content" class="inwork" style="margin-top:-19px;width:100%; height:20%;background-color:;position:relative;text-align:center">
+                          
+                          <div id="te" style="background-color:">
+                            <ul style="text-align:center;background-color:#ececec">
+                                <li><img class=" item responsive-img" style="border-radius:10%;width: 18%;height: 9%;" src="/static/uploads/reg/boys.jpg" alt=""></li>
+                                <li><img class=" item responsive-img" style="border-radius:10%;width: 18%;height: 9%;" src="/static/uploads/reg/boys.jpg" alt=""></li>
+                                <li><img class=" item responsive-img" style="border-radius:10%;width: 18%;height: 9%;" src="/static/uploads/reg/boys.jpg" alt=""></li>
+                                <li><img class=" item responsive-img" style="border-radius:10%;width: 18%;height: 9%;" src="/static/uploads/reg/boys.jpg" alt=""></li>
+                            </ul>
+                          </div>
+
+                        </div>
+                        <!---  start description  -->
+                        <div  id="description" style="width:100%;height:auto; text-align:center;">
+                            <p style="margin:12px;color:black;font-weight:600;margin-bottom: 15px;
+                                    font-family: Sofia, sans-serif;
+                                
+                                  -webkit-font-smoothing: antialiased;
+                                  font-size:12px;
+                                  line-height: 1.66667;font-style: "Sofia", sans-serif;">
+                                {{posts['description']}}
+                            </p>
+                        </div>
+                        <!---  end discription  -->
+
+                        <!---  start comments -->
+                        <div id="comments" style="background-color:#ececec">
+                    
+                          <div id="div" style="background-color:#ececec; width:100%;height:70%">
+                            <h2 style="margin:12px;text-align:left;color:black;font-weight:600;margin-bottom: 15px;font-family: Sofia, sans-serif;-webkit-font-smoothing: antialiased;font-size:12px;line-height: 1.66667;font-style: "Sofia", sans-serif;">
+                              
+                              <span style="color:green;font-weight:700"><i class="material-icons" style="color:black">person</i>iIbrahim Thollie</span> While the final Senate bill has not been released yet, lawmakers are expected to make two major changes -- narrowing eligibility for the stimulus checks and nixing 
+                                    
+                            </h2>
+                            <div id="title" data="money" style="margin:center; height:10%;background-color:">
+                              <ul id="post-key-post-email" data-key-post-name="money" data-key-post-email="ithollie@yahoo.com" data-key-post-id="22">
+                                    <li data-key-author="Ibrahim " data-key-name="money" data-key-email="ithollie@yahoo.com" data-key-id="22" id="createRequests" data-key-receiver="22" data-key-post="22" class="requests waves-effect modal-trigger" href="#modal1" style="color:black; background-color:"><a style="color:green; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"></a><a style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"><i class="material-icons">mode_comment</i></a></li><a style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;">
+                                    <li data-key-author="Ibrahim " data-key-name="money" data-key-email="ithollie@yahoo.com" data-key-id="22" id="requests" data-key-receiver="22" data-key-post="22" class="requests waves-effect   " style="margin:10px;color:black; background-color:"><a style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"></a><a style="color:yellow; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"><i class="material-icons">import_export</i></a></li><a style="color:yellow; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;">
+                                    <li data-key-author="Ibrahim " data-key-name="money" data-key-email="ithollie@yahoo.com" data-key-id="22" id="comments" data-key-commenter="" data-key-post="22" class="waves-effect  modal-trigger" href="#modal1" style="margin:10px;color:red; background-color:"><a style="color:yellow; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"></a><a style="color:blue; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"><i class="material-icons">comment</i><span id="spcomments">0</span></a></li>
+                                    <li data-key-author="Ibrahim " data-key-name="money" data-key-email="ithollie@yahoo.com" data-key-id="22" id="likes" data-key-likes="" data-key-post="22" class="waves-effect   " style="margin:10px;color:black; background-color:"><a id="num" style="color:blue; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"><i class="material-icons">thumb_up</i><span id="splikes">8</span></a></li><a id="num" style="color:blue; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;">
+                                    <li data-key-author="Ibrahim " data-key-name="money" data-key-email="ithollie@yahoo.com" data-key-id="22" id="dislikes" data-key-dilikes="" data-key-post="22" class="waves-effect  " style="margin:10px;color:white; background-color:"><a id="num" style="color:blue; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"></a><a id="num" style="color:green; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"><i class="material-icons">thumb_down</i><span id="spdislikes">10</span></a></li><a id="num" style="color:green; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;">
+                                    <li data-key-author="Ibrahim " data-key-name="money" data-key-email="ithollie@yahoo.com" data-key-id="22" id="delete" data-key-delete="" data-key-post="22" class="waves-effect  " style="margin:10px;color:white; background-color:"><a id="num" style="color:green; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"></a><a id="num" style="color:pink; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"><i class="material-icons">delete</i><span id="delete"></span></a></li><a id="num" style="color:pink; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;">
+                                </ul>
+                            </div>
+                          </div>
+                          <div id="div" style="background-color:#ececec; width:100%;height:70%">
+                            <h2 style="margin:12px;text-align:left;color:black;font-weight:600;margin-bottom: 15px;font-family: Sofia, sans-serif;-webkit-font-smoothing: antialiased;font-size:12px;line-height: 1.66667;font-style: "Sofia", sans-serif;">
+                              
+                              <span style="color:green;font-weight:700"><i class="material-icons" style="color:black">person</i>iIbrahim Thollie</span> While the final Senate bill has not been released yet, lawmakers are expected to make two major changes -- narrowing eligibility for the stimulus checks and nixing 
+                                    
+                            </h2>
+                            <div id="title" data="money" style="margin:center; height:10%;background-color:#f1eded">
+                              <ul id="post-key-post-email" data-key-post-name="money" data-key-post-email="ithollie@yahoo.com" data-key-post-id="22">
+                                    <li data-key-author="Ibrahim " data-key-name="money" data-key-email="ithollie@yahoo.com" data-key-id="22" id="createRequests" data-key-receiver="22" data-key-post="22" class="requests waves-effect modal-trigger" href="#modal1" style="color:black; background-color:"><a style="color:green; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"></a><a style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"><i class="material-icons">mode_comment</i></a></li><a style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;">
+                                    <li data-key-author="Ibrahim " data-key-name="money" data-key-email="ithollie@yahoo.com" data-key-id="22" id="requests" data-key-receiver="22" data-key-post="22" class="requests waves-effect   " style="margin:10px;color:black; background-color:"><a style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"></a><a style="color:yellow; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"><i class="material-icons">import_export</i></a></li><a style="color:yellow; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;">
+                                    <li data-key-author="Ibrahim " data-key-name="money" data-key-email="ithollie@yahoo.com" data-key-id="22" id="comments" data-key-commenter="" data-key-post="22" class="waves-effect  modal-trigger" href="#modal1" style="margin:10px;color:red; background-color:"><a style="color:yellow; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"></a><a style="color:blue; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"><i class="material-icons">comment</i><span id="spcomments">0</span></a></li>
+                                    <li data-key-author="Ibrahim " data-key-name="money" data-key-email="ithollie@yahoo.com" data-key-id="22" id="likes" data-key-likes="" data-key-post="22" class="waves-effect   " style="margin:10px;color:black; background-color:"><a id="num" style="color:blue; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"><i class="material-icons">thumb_up</i><span id="splikes">8</span></a></li><a id="num" style="color:blue; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;">
+                                    <li data-key-author="Ibrahim " data-key-name="money" data-key-email="ithollie@yahoo.com" data-key-id="22" id="dislikes" data-key-dilikes="" data-key-post="22" class="waves-effect  " style="margin:10px;color:white; background-color:"><a id="num" style="color:blue; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"></a><a id="num" style="color:green; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"><i class="material-icons">thumb_down</i><span id="spdislikes">10</span></a></li><a id="num" style="color:green; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;">
+                                    <li data-key-author="Ibrahim " data-key-name="money" data-key-email="ithollie@yahoo.com" data-key-id="22" id="delete" data-key-delete="" data-key-post="22" class="waves-effect  " style="margin:10px;color:white; background-color:"><a id="num" style="color:green; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"></a><a id="num" style="color:pink; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"><i class="material-icons">delete</i><span id="delete"></span></a></li><a id="num" style="color:pink; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;">
+                                </ul>
+                            </div>
+                          </div>
+                          
+                        </div>
+                        <!---  start comments ends -->
+                        <div id="yvido" style="display:none">
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/Fl44DM1EihM?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                      
+                        <div parent-data-key-parent="{{posts['title']}}" style="background-color:#f1eded" >
+                          <div id="send" style="    padding-top: 0px;border-radius: 5%;height: 30px;background-color:#4a433c;color:white;font-weight:400;margin-bottom: 0px;width:90px;
+                                    font-family: Sofia, sans-serif;
+                                
+                                  -webkit-font-smoothing: antialiased;
+                                  font-size:12px;
+                                  font-style: " data-key-author="{{posts['author']}}" data-key-name="{{posts['title']}}" data-key-email="{{posts['email']}}" data-key-id="{{posts['id']}}"id="comments" data-key-commenter=""  data-key-post="{{posts['id']}}" class="send  waves-effect waves-light  btn" >
+                              comments
+                            </div>
+                            <!-- text  area -->
+                            <div id="inputss" style="background-color:#f1eded;margin-top:-16px; padding-top: 43px;" >
+                              
+                              <textarea id="textarea" data-key-author="{{posts['author']}}" data-key-name="{{posts['title']}}" data-key-email="{{posts['email']}}" data-key-id="{{posts['id']}}" style="width: 80%; height:30px;border-radius: 10px; padding-left: 12px; background-color: white; margin-top: 0px; margin-bottom: 0px; height: 172px;" class="form-control" type="text" cols="80" name="description" placeholder="" required=""></textarea>
+                            
+                            </div>
+                            <!-- text area end -->
+
+                            <div id="sendtextarea" data-key-author="{{posts['author']}}" data-key-name="{{posts['title']}}" data-key-email="{{posts['email']}}" data-key-id="{{posts['id']}}"  style="padding-top: 6px;border-radius: 50%;height: 46px;background-color:#4a433c;black:color:black;font-weight:400;margin-bottom: 0px;width:50px;font-family: Sofia, sans-serif;-webkit-font-smoothing: antialiased;font-size:12px;font-style: " data-key-author="{{posts['author']}}" data-key-name="{{posts['title']}}" data-key-email="{{posts['email']}}" data-key-id="{{posts['id']}}"id="comments" data-key-commenter=""  data-key-post="{{posts['id']}}" class="send  waves-effect waves-light  btn" >
+                              post
+                            </div>
+
+                            <div id="title" data="money" style="margin:center; height:10%;background-color:"><a id="num" style="color:pink; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;">
+                            
+                                <ul id="post-key-post-email" data-key-post-name="money" data-key-post-email="ithollie@yahoo.com" data-key-post-id="22"><a id="num" style="color:pink; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;">
+                                      
+                                      </a><li data-key-author="Ibrahim " data-key-name="money" data-key-email="ithollie@yahoo.com" data-key-id="22" id="createRequests" data-key-receiver="22" data-key-post="22" class="requests waves-effect modal-trigger" href="#modal1" style="color:black; background-color:"><a style="color:green; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"></a><a style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"><i class="material-icons">mode_comment</i></a></li><a style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;">
+                                      </a><li data-key-author="Ibrahim " data-key-name="money" data-key-email="ithollie@yahoo.com" data-key-id="22" id="requests" data-key-receiver="22" data-key-post="22" class="requests waves-effect   " style="margin:10px;color:black; background-color:"><a style="color:black; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"></a><a style="color:yellow; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"><i class="material-icons">import_export</i></a></li><a style="color:yellow; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;">
+                                      </a><li data-key-author="Ibrahim " data-key-name="money" data-key-email="ithollie@yahoo.com" data-key-id="22" id="comments" data-key-commenter="" data-key-post="22" class="waves-effect  modal-trigger" href="#modal1" style="margin:10px;color:red; background-color:"><a style="color:yellow; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"></a><a style="color:blue; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"><i class="material-icons">comment</i><span id="spcomments">0</span></a></li>
+                                      <li data-key-author="Ibrahim " data-key-name="money" data-key-email="ithollie@yahoo.com" data-key-id="22" id="likes" data-key-likes="" data-key-post="22" class="waves-effect   " style="margin:10px;color:black; background-color:"><a id="num" style="color:blue; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"><i class="material-icons">thumb_up</i><span id="splikes">8</span></a></li><a id="num" style="color:blue; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;">
+                                      </a><li data-key-author="Ibrahim " data-key-name="money" data-key-email="ithollie@yahoo.com" data-key-id="22" id="dislikes" data-key-dilikes="" data-key-post="22" class="waves-effect  " style="margin:10px;color:white; background-color:"><a id="num" style="color:blue; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"></a><a id="num" style="color:green; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"><i class="material-icons">thumb_down</i><span id="spdislikes">10</span></a></li><a id="num" style="color:green; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;">
+                                      </a><li data-key-author="Ibrahim " data-key-name="money" data-key-email="ithollie@yahoo.com" data-key-id="22" id="delete" data-key-delete="" data-key-post="22" class="waves-effect  " style="margin:10px;color:white; background-color:"><a id="num" style="color:green; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"></a><a id="num" style="color:pink; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"><i class="material-icons">delete</i><span id="delete"></span></a></li><a id="num" style="color:pink; text-decoration:none; font-size:calc(calc(0.5vw + 1vh) + 0px); text-transform: lowercase;"></a>
+                                
+                                </ul>
+                                
+                        </div>
+
+                </div>
+
+  		        {% endfor %}
+              {% endblock %}
+              </div>
+
+            <footer class="page-footer" style="position:relative;clear: both;background-color:#1c1216">
+            <div class="container">
+              <div class="row">
+                <div class="col l6 s12">
+                  <h5 class="white-text">Mission Statement</h5>
+                  <p class="grey-text text-lighten-4">Be Beautiful.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                  <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!" style="text-align:left;color:black;font-weight:500;margin-bottom: 15px;
+                                  font-family: CNN,Helvetica Neue,Helvetica,Arial,Utkal,sans-serif;
+                                font-weight: 300;
+                                -webkit-font-smoothing: antialiased;
+                              
+                                font-size: 1.2rem;
+                                line-height: 1.66667;">policy</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!" style="text-align:left;color:black;font-weight:500;margin-bottom: 15px;
+                                  font-family: CNN,Helvetica Neue,Helvetica,Arial,Utkal,sans-serif;
+                                font-weight: 300;
+                                -webkit-font-smoothing: antialiased;
+                              
+                                font-size: 1.2rem;
+                                line-height: 1.66667;">account</a></li>
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="footer-copyright">
+              <div class="container" style="text-align:left;color:black;font-weight:500;margin-bottom: 15px;
+                                  font-family: CNN,Helvetica Neue,Helvetica,Arial,Utkal,sans-serif;
+                                font-weight: 300;
+                                -webkit-font-smoothing: antialiased;
+                              
+                                font-size: 1.2rem;
+                                line-height: 1.66667;">
+              © 2021 Copyright Vibe LLC.
+              </div>
+            </div>
+          </footer>
+  </div>
+
+  <!-- END -->
+  <!-- JAVASCRIPT INITIAL-->
+  <script>
+    window.addEventListener(`DOMContentLoaded` ,Controller.initialize);
+  </script>
+
+  </body>
+</html>

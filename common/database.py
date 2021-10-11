@@ -1,9 +1,9 @@
 import pymongo
+import urllib 
 import os
 
 class Database(object):
-    Uri = "mongodb://127.0.0.1:27017"
-    online = "mongodb://ithollie:hawaibrahB1a@ds023478.mlab.com:23478/full_stack"
+    
     DATABASE = None
 
     def __init(self):
@@ -11,8 +11,17 @@ class Database(object):
 
     @staticmethod
     def initialize():
-        client = pymongo.MongoClient(Database.connectUrl(Database.Uri, Database.online))
-        Database.DATABASE = client['full_stack']
+            username = urllib.parse.quote_plus('ithollie')
+            password = urllib.parse.quote_plus('hawaibrahB1a1@@')
+            
+
+            client = pymongo.MongoClient("mongodb+srv://%s:%s@cluster0.jdn8r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority" % (username, password))
+            #db = client.test
+
+            #cli = pymongo.MongoClient("mongodb://%s:%s@cluster0.scnlr.mongodb.net/vibe?retryWrites=true&w=majority" % (username, password))
+            
+            #client = pymongo.MongoClient("mongodb+srv://%s:%s@cluster0.scnlr.mongodb.net/vibe?retryWrites=true&w=majority" % (username, password))
+            Database.DATABASE = client['chitchat']
 
     @staticmethod
     def connectUrl(uri_connection, online_connection):

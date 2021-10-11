@@ -1,49 +1,37 @@
 from flask import Flask, render_template, escape, make_response, redirect,session, request,jsonify,json, flash,url_for
-from common.database import Database
-from  models import constants as UserConstants
-#from werkzeug.contrib.fixers import LighttpdCGIRootFix
-from models.System_file import File_system
 import ssl
 import sys
-from werkzeug import serving
-
-import logging 
-#import stripe
-from  logging.handlers import RotatingFileHandler
-from common.Utils import utils
-from hashlib import md5
-from flask import   jsonify
-import datetime
-from models.user.User import Users
-from werkzeug.utils import secure_filename
 import os
-#from werkzeug.contrib.fixers import LighttpdCGIRootFix
-from werkzeug.utils import secure_filename
-from werkzeug.datastructures import  FileStorage
-from flask import Flask,redirect,url_for,session,render_template,request,flash,make_response
-from models.user.User import Users
-from models import constants as UserConstants
-from models.System_file import File_system
-
-from common.database import Database
-from common.Utils import utils
-from models.user import error as UserErrors
-
-from bson.objectid import ObjectId
 import re
 import uuid
+import logging 
+import datetime
+import socket, ssl
+
+from  hashlib import md5
+from  common.database import Database
+from  models import constants as UserConstants
+from  models.System_file import File_system
+from  common.Utils import utils
+
+from models.user.User import Users
+from werkzeug.utils import secure_filename
+
+from werkzeug.datastructures import  FileStorage
+from models.flask_wtf.register import RegisterForm
+from flask import Flask,redirect,url_for,session,render_template,request,flash,make_response
+from models.user.User import Users
+from models.System_file import File_system
+from models.user import error as UserErrors
+from bson.objectid import ObjectId
+
 # from models.comments.comment import Comments
 # from models.flask_wtf.login import LoginForm
 # from models.flask_wtf.blogform import BlogForm
 # from models.flask_wtf.editeform import EditeForm
 # from models.flask_wtf.commentform import CommentForm
 
-from common.Utils import utils
-from models import constants as UserConstants
-from common.Utils import utils
-#from werkzeug.contrib.fixers import LighttpdCGIRootFix
-import os
-import socket, ssl
+
 context = ssl.SSLContext(ssl.PROTOCOL_TLS)
 context.verify_mode = ssl.CERT_REQUIRED
 context.check_hostname = False
@@ -59,11 +47,8 @@ UPLOAD_FOLDER = os.path.basename('static') + "/uploads"
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-# WTF_CSRF_ENABLED = True
-app.secret_key = os.urandom(24)
-# Set your secret key. Remember to switch to your live secret key in production!
-# See your keys here: https://dashboard.stripe.com/account/apikeys
 
+app.secret_key = os.urandom(24)
 
 @app.before_first_request
 def initialize_database():
@@ -117,9 +102,9 @@ def activate():
     
 app.route('/signUpUser', methods=['POST'])
 def signUpUser():
-    user =  request.form['username'];
-    password = request.form['password'];
-    return json.dumps({'status':'OK','user':user,'pass':password});
+    user =  request.form['username']
+    password = request.form['password']
+    return json.dumps({'status':'OK','user':user,'pass':password})
     
 
 @app.route('/blogs/current_user/<string:email>/<string:_id>')
@@ -782,8 +767,8 @@ def register_route():
 
 @app.route('/register')
 def register():
-   regform = Form()
-   return render_template('register.html', title='registration', regform=regform)
+   #regform = Form()
+   return render_template('register.html', title='registration', regform="")
 
 #url profile_picture
 @app.route('/profile_picture_url')
@@ -866,40 +851,37 @@ def viewMessage():
     
 @app.route('/register/process', methods=['GET', 'POST'])
 def register_process():
-    
-   regform = Form(request.form)
- 
-   if request.method == 'POST' and  request.cookies.get('login_email') =="":
-       print("bingo")
-       reg =  RegisterForm(request.form['firstname'],request.form['lastname'],request.form['email'],request.form['password'],request.form['confirm'],request.files['file'])
-       size=128
-       dig = md5(request.form['email'].lower().encode('utf-8')).hexdigest()
-       image = 'https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(dig, size)
-       user_name = request.form['firstname'].lower()
-       
-       f  = reg.filename
-       filename = secure_filename(f.filename)
-     
-       f.save(os.path.join(os.getcwd() +'/static/uploads/reg', filename))
-       
-       email = request.form['email'].lower()
-       useremail = request.form['email'].lower()
-       
-       password = request.form['password'].lower()
-       confirm  = request.form['confirm'].lower()
-       
-       if  Users.get_by_email(request.form['email'].lower()) == False and password == confirm:
-           registeremail  = Regmail(useremail)
-           registeremail.send()
-           Users.registration(request.form['firstname'], request.form['lastname'] , request.form['email'], request.form['password'], request.files['file'].filename, image=image)
-           dic =  [email, password]
-           print(dic)
-           return redirect(url_for('success_full_reg'))
-       else:
-           flash("The user name that you enter is forbiding please try again")
-           return render_template('register.html', title='register', regform=regform)
-   flash("there is a problem in the registration")
-   return render_template('register.html', title='register', regform=regform)
+
+    if request.method == 'POST' and  request.cookies.get('login_email') =="":
+
+            reg =  RegisterForm(request.form['firstname'],request.form['lastname'],request.form['email'],request.form['password'],request.form['repeat_password'],request.files['file_name'])
+            size=128
+            dig = md5(request.form['email'].lower().encode('utf-8')).hexdigest()
+            image = 'https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(dig, size)
+            user_name = request.form['firstname'].lower()
+            
+            f  = reg.filename
+            filename = secure_filename(f.filename)
+            
+            f.save(os.path.join(os.getcwd() +'/static/uploads/reg', filename))
+            
+            email = request.form['email'].lower()
+            useremail = request.form['email'].lower()
+            
+            password = request.form['password'].lower()
+            confirm  = request.form['repeat_password'].lower()
+            
+            if  Users.get_by_email(request.form['email'].lower()) == False and password == confirm:
+                #registeremail  = Regmail(useremail)
+                #registeremail.send()
+                Users.registration(request.form['firstname'], request.form['lastname'] , request.form['email'], request.form['password'], request.files['file_name'].filename, image=image)
+                
+                return redirect(url_for('success_full_reg'))
+            else:
+                flash("The user name that you enter is forbiding please try again")
+                return render_template('register.html', title='register', regform="")
+    flash("there is a problem in the registration")
+    return render_template('register.html', title='register', regform="")
 
 @app.route('/changepass', methods=['GET' , 'POST'])
 def changepass():
@@ -986,7 +968,7 @@ def welcome():
                     item = Database.find_one(UserConstants.COLLECTION,{"email":request.cookies.get('login_email')})
                 
                     uploads    = Database.find('myboo', {"useremail":request.cookies.get('login_email')})
-                    com_text = Users.text_avaliable(Database.find_one('profileImage', {"useremail":request.cookies.get('login_email')}))
+                    com_text =   Database.find_one('profileImage', {"email":request.cookies.get('login_email')})
                     if com_text is not  None:
                         com_text = Users.text_avaliable(Database.find_one('profileImage', {"useremail":request.cookies.get('login_email')}))
                     elif com_text is None:
@@ -996,18 +978,16 @@ def welcome():
                     
                     if  request.cookies.get('login_email') != "":
                     
-                        postobject = UserBlog(request.cookies.get('login_email'))
-                        blogs = postobject.blog_list()
-                        #.append(comments_maps) 
+                        #postobject = UserBlog(request.cookies.get('login_email'))
+                        #blogs = postobject.blog_list()
+                    
                      
-                        print(blogs)
-
                         #blogs      = Database.find("blogs", {"email":request.cookies.get('login_email')})
                         
                         pictures     =  Database.find('profileImage',{}).limit(4)
                         
                         saysomething = Database.find(request.cookies.get('login_email')+"saycomment", {'login_email':request.cookies.get('login_email')})
-                        youtube    = Database.find_one('user', {"email":request.cookies.get('login_email')})['youtube']
+                        #youtube    = Database.find_one('user', {"email":request.cookies.get('login_email')})['youtube']
                         print(saysomething)
                         #no  need for a new collection
                         postsu     = Database.find(request.cookies.get('login_email')+"_"+"blog_posts", {})
@@ -1015,19 +995,19 @@ def welcome():
                         videos      = Database.find("videos",  {})
                         
                         
-                        postUsers  = Users.find(Database.find("blogs", {}),Database.find("blogs", {}).count())
+                        postUsers  = Database.find("blogs", {})
                         
                         length     = Database.find("requests"+request.cookies.get('login_email'), {}).count()
                         
-                        messageRe   = Database.find("requests"+request.cookies.get('login_email'), {}).count()
+                        messageRe  = Database.find("requests"+request.cookies.get('login_email'), {}).count()
                         requests   = Database.find("requests"+request.cookies.get('login_email'), {}).count()
-                        friends    = Users.friends(Database.find("requests"+request.cookies.get('login_email'), {}) ,length)
-                        requests = requests - friends
-                        acccepted  = Users.acceptedFriends(Database.find("requests"+request.cookies.get('login_email'), {}), length) - length
+                        friends    = Database.find("requests"+request.cookies.get('login_email'), {}).count()
+                        requests = (requests - friends)
+                        acccepted  = Database.find("requests"+request.cookies.get('login_email'), {}).count() - length
                         
-                        messages   = Users.messages( Database.find("requests"+request.cookies.get('login_email'),{}) ,length)
+                        messages   = Database.find("requests"+request.cookies.get('login_email'),{}).count()
                         
-                        userblog   = Users.blogs( "blogs" ,item['email'])
+                        userblog   = Database.find("blogs" ,{'email':item['email']})
                         email      = request.cookies.get('login_email') 
                         user       = Database.find_one('user', {"email":email})
                         
@@ -1037,7 +1017,7 @@ def welcome():
                         
                         img = File_system.image(request.cookies.get('login_email'))
                         flash('Login is a success' + " "+ 'welcome' + " "+ request.cookies.get('login_email'))
-                        return render_template('index.html',videos=videos,comment_posts=comment_posts,pictures=pictures,requests=requests, messageRe=messageRe,friends=friends, email=request.cookies.get('login_email'),firstname=items['firstname'],_id=items['_id'],lastname = items['lastname'],date=date, login='true',image=items['image'],blogs=blogs, posts=postsu , userblog=userblog,user=user, Database=Database, youtube=youtube, uploads=uploads, saysomething=saysomething)
+                        return render_template('index.html',videos=videos,comment_posts=comment_posts,pictures=pictures,requests=requests, messageRe=messageRe,friends=friends, email=request.cookies.get('login_email'),firstname=items['firstname'],_id=items['_id'],lastname = items['lastname'],date=date, login='true',image=items['image'], posts=postsu , userblog=userblog,user=user, Database=Database,  uploads=uploads, saysomething=saysomething)
                     else:
                         print("it doesnt work")
             #except:

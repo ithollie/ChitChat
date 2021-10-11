@@ -27,13 +27,13 @@ class Users(object):
 		self._id = uuid.uuid4().hex if _id is None else _id
 
 	def parentMethod(self):
-		print 'Calling parent  method'
+		print('Calling parent  method')
 	
 	def setAttr(self,  attr):
 		Users.parentAttr = attr
 	
 	def getAttr(self):
-		print 'Parent  attribute :',  Users.parentAttr
+		print ('Parent  attribute : %s ', (  Users.parentAttr))
 	
 	@staticmethod
 	def __sendemail():
@@ -115,16 +115,12 @@ class Users(object):
 
 	@classmethod
 	def registration(cls, firstname, lastname , email,password, age,image):
-		Link  =  LinkedLists(firstname, lastname, email, password, age,  image)
 		
-		if Link.insert() == firstname:
-			if cls.get_by_email(email) == False and utils.email_is_valid(email):
-				new_user = cls(firstname,lastname,email,utils.hash_password(password),image,  age)
-				new_user.save_to_mongo()
-				session['email'] = email
-				return True
-			else:
-				return "there is a user with that email"
+		if cls.get_by_email(email) == False and utils.email_is_valid(email):
+			new_user = cls(firstname,lastname,email,utils.hash_password(password),image,  age)
+			new_user.save_to_mongo()
+			session['email'] = email
+			return True
 		else:
 			return  False
 		

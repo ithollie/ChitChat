@@ -23,9 +23,9 @@ os.environ["VIRTUAL_ENV"] = base  # virtual env is right above bin directory
 
 # add the virtual environments libraries to the host python import mechanism
 prev_length = len(sys.path)
-for lib in "..\\Lib\\site-packages".split(os.pathsep):
+for lib in "..\Lib\site-packages".split(os.pathsep):
     path = os.path.realpath(os.path.join(bin_dir, lib))
-    site.addsitedir(path.decode("utf-8") if "yes" else path)
+    site.addsitedir(path.decode("utf-8") if "" else path)
 sys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]
 
 sys.real_prefix = sys.prefix

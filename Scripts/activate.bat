@@ -1,6 +1,6 @@
 @echo off
 
-set "VIRTUAL_ENV=C:\software_Engineer\Software_Engineer_python\Chitchat"
+set "VIRTUAL_ENV=C:\Users\ithollie\Desktop\web\ChitChat"
 
 if defined _OLD_VIRTUAL_PROMPT (
     set "PROMPT=%_OLD_VIRTUAL_PROMPT%"

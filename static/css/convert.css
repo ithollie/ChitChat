@@ -1,164 +1,102 @@
 #wrapper{
-     width:100%;
+    width:100%;
+    padding: 1px;
+    top: 130px;
+    /*position:relative;*/
+    /*background-color:#fcfbfb;*/
 }
-#tile{
-    display: none;
+.sidenav .user-view .circle {
+    min-height: 40px;
+    min-width: 80px;
+}
+#titlelogin{
+    height: 15%;
+    height: 8%;
+}
+#why{
+    max-width: 100%;
 }
 
-.decoration{
-    text-decoration:none;
-}
-#profile_picture{
-    background-color:;
-    height: 60%;
-    background-size:cover;
-    background-repeat: no-repeat;
-    background-color:black;
-    //background-image: url('https://cdn.glitch.com/d9630ef2-8ea2-4f57-83d0-e1c5dc5aebe5%2FPrimeMusicLandingPage_Slot2_1500x600._CB502263737_.jpg?1533588645610');
+.maing{
+    width: 444.6666666667%;
 }
 
-#wow ul li{
-    color:red;
-    border-radius:8px;
-    margin:30px;
-    padding:3px;
-    color:black;
-    height: 40px;
-    font-weight:bold;
-    font-style:normal;
-    font-size: large;
-    width:auto;
-    text-decoration: none;
-    background-color:#b7adad63;
+.sizeof{
+   min-width: 40%;
 }
-#wow{
-    position: absolute;
-    left: 9%;
-    height:30%;
+#titlelogin{
+    /*background-color:#215775;*/
 }
-#wow ul{
-    display: inline-block;
+img{
+     min-width: 10%;
+}
+#inputss{
     width:100%;
-    height:100%;
-    padding:12px;
-    background:;
-    text-align: center;
-    visibility:hidden;
-    color:black;
 }
-.show{
-    visibility: visible;
-    width:100%;
-    height:42%;
-    background-color:white;
+a{
+    font-size: calc(calc(2vw + 1vh) + 0px);
+}
+.constitution{
+  /*font-size:calc(calc(0.9vw + 1vh) + 0px);*/
+  background-color:#fcfbfb;
+  margin-bottom: 15px;
+  font-weight: 400;
+  color:black;
+  padding-left:1px;
+  padding-right:1px;
+  font-family: CNN,Helvetica Neue,Helvetica,Arial,Utkal,sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.66667;
+  
 }
 #header{
     width:calc(calc(100vw + 1vh) + 0px);
     left:0%;
 }
-#lol{
-    visibility: hidden;
+#videoOne{
+   clear:both;
+   padding-left: 4px;
+   float:left;
+   width: 100%;
+   height: 5%;
+   padding-bottom: 12px;
+   background: white
 }
-#peace{
-    visibility: hidden;
-    display: inline;
+#header{
+  color:white;
+  padding:0px;
+  height:60vh;
+  margin:0px;
+  z-index: 10000;
+  width:calc(calc(100vw + 1vh) + 0px);
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
 }
-.change{
-    width:900%;
-    margin:2px;
+.vTwo{
+   padding-bottom: 12px;
+   clear:both;
+   padding-left: 4px;
+   float: left;
+   width: 100%;
+   height: 5%;
+   background:#fcfbfb;
 }
-change{
-   
-   margin:2px;  
-}
-.increase{
-    width:200%;
-}
-.remove{
-    
-    visibility: hidden;
-}
-#indent{
-   display:none;
-}
-
-#playlist ul {
-    display:inline-flex;
-    height: 100%;
-    padding:3px;
-    margin:17px;
-    background-color:white;
-    width:auto;
-}
-#next_near{
-    height: 70%;
-    background-color:red;
-}
-#playlist {
-    height: 38%;
-    padding: 0%;
-    padding-left: 0%;
-    color:white;
-    text-align:center;
-    background-color:white;
-
-}
-#firsti{
-    visibility:hidden;
-}
-.max-width{
-    width:110%;
-}
-#songs h3{
-    color:black;
-}
-#gap{
-    visibility:hidden;
-    width:60%;
-    float:left;
-    height:40%;
+#mag{
+  height:400px;  
 }
 
-#vid{
-    width:100%;
-    height:60%;
+.VOne{
+   padding-bottom: 12px;
+   padding-left: 4px;
+   float: left;
+   width: 100%;
+   height: 5%;
+   background:#fcfbfb;
 }
-
-#videos{
-    width:100%;
-    height:100%;
-}
-.max-height{
-    height:100%;
-}
-.max-width_one{
-    width:100%;
-}
-
-.max-height_one{
-    height:100%;
-}
-
-#that{
-    visibility:hidden;
-}
-
-#next-near{
-    height:50%;
-}
-
-#search{
-    
-  height:11%;
-}
-#wrapper{
-    top:0px;
-}
-#main{
-    color:red;
-}
-.container-1{
-    visibility: hidden;
+h2{
+    font-size: 23px;
+    text-align: center;
 }
 #tone{
     height:2%;
@@ -166,13 +104,43 @@ change{
 #tone1{
     visibility: hidden;
 }
+.topnav{
+  top:0px;
+  position: relative;
+  width:100%;
+  background-color:red;
+  display:block;
+  margin:auto;
+}
+#titleText{
+  font-size:40px;
+  font-weight:700;
+}
+#titlelogin{
+   position: relative;
+   z-index: 10000;
+   /*top:441px;*/
+   width:100%; height:10%;
+   background-color:#313146;
+}
 #te{
     width:calc(calc(100vw + 1vh) + 0px);
-    height:5%;
+    /*background-color:#000000;*/
+    /*opacity: 0.7;*/
+    height:1.4%;
+}
+#g{
+    background-color:red;
 }
 #liste{
     width:100%;
     background-color:brown;
+}
+#VOnediv{
+  width:100%;height:15%;background-color:#ffffff;    padding-top: 1px
+}
+#VTwodiv{
+  width:100%;height:15%;background-color:#ffffff;    padding-top: 1px
 }
 #listp{
     width:100%;

@@ -1,4 +1,6 @@
 from flask import Flask, render_template, escape, make_response, redirect,session, request,jsonify,json, flash,url_for
+from flask import Flask,redirect,url_for,session,render_template,request,flash,make_response
+from sendemail.registration_email_sender.registeration_email_sender import Regmail
 import ssl
 import sys
 import os
@@ -19,15 +21,14 @@ from werkzeug.utils import secure_filename
 
 from werkzeug.datastructures import  FileStorage
 from models.flask_wtf.register import RegisterForm
-from flask import Flask,redirect,url_for,session,render_template,request,flash,make_response
-from models.user.User import Users
-from models.System_file import File_system
+from RegisterForm.RegisterForm import RegForm as Form
+
 from models.user import error as UserErrors
 from bson.objectid import ObjectId
 
-# from models.comments.comment import Comments
-# from models.flask_wtf.login import LoginForm
-# from models.flask_wtf.blogform import BlogForm
+#from models.comments.comment import Comments
+#from models.flask_wtf.login import LoginForm
+#from models.flask_wtf.blogform import BlogForm
 # from models.flask_wtf.editeform import EditeForm
 # from models.flask_wtf.commentform import CommentForm
 
@@ -67,7 +68,6 @@ def route():
     response.set_cookie('login_id', "")
     return  response
 
-    
 @app.route('/admin_login')
 def admin_login():
     return  render_template('admin.html')
@@ -76,7 +76,6 @@ def admin_login():
 @app.route('/payments')
 def  payment():
     return   render_template('checkout.html')
-
 
 @app.route('/create_payment', methods=['POST'])
 def create_payment():
@@ -851,37 +850,42 @@ def viewMessage():
     
 @app.route('/register/process', methods=['GET', 'POST'])
 def register_process():
+    
+   regform = Form(request.form)
+ 
+   if request.method == 'POST':
+       
+       firstName=request.form['firstname'].lower()
+       lastName =request.form['lastname'].lower()
+       useremail=request.form['email'].lower()
+       password =request.form['password'].lower()
+       confirm_password  =request.form['confirm_password'].lower()
+       birth    =request.form['birth'].lower()
+       fileName =secure_filename(request.files['file'].filename.lower())
 
-    if request.method == 'POST' and  request.cookies.get('login_email') =="":
+       
+       
+       size=128
+       dig = md5(request.form['email'].lower().encode('utf-8')).hexdigest()
+       image = 'https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(dig, size)
+       user_name = request.form['firstname'].lower()
+       
+       request.files['file'].save(os.path.join(os.getcwd() +'/static/uploads/reg', fileName))
+       
 
-            reg =  RegisterForm(request.form['firstname'],request.form['lastname'],request.form['email'],request.form['password'],request.form['repeat_password'],request.files['file_name'])
-            size=128
-            dig = md5(request.form['email'].lower().encode('utf-8')).hexdigest()
-            image = 'https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(dig, size)
-            user_name = request.form['firstname'].lower()
-            
-            f  = reg.filename
-            filename = secure_filename(f.filename)
-            
-            f.save(os.path.join(os.getcwd() +'/static/uploads/reg', filename))
-            
-            email = request.form['email'].lower()
-            useremail = request.form['email'].lower()
-            
-            password = request.form['password'].lower()
-            confirm  = request.form['repeat_password'].lower()
-            
-            if  Users.get_by_email(request.form['email'].lower()) == False and password == confirm:
-                #registeremail  = Regmail(useremail)
-                #registeremail.send()
-                Users.registration(request.form['firstname'], request.form['lastname'] , request.form['email'], request.form['password'], request.files['file_name'].filename, image=image)
-                
-                return redirect(url_for('success_full_reg'))
-            else:
-                flash("The user name that you enter is forbiding please try again")
-                return render_template('register.html', title='register', regform="")
-    flash("there is a problem in the registration")
-    return render_template('register.html', title='register', regform="")
+       if  Users.get_by_email(request.form['email'].lower()) == False and password == confirm_password:
+           registeremail  = Regmail(useremail)
+           registeremail.send()
+           Users.registration(firstName, lastName , useremail, password, fileName, image)
+           
+           return redirect(url_for('success_full_reg'))
+       else:
+           flash("The user name that you enter is forbiding please try again")
+           return render_template('register.html', title='register', regform=regform)
+
+   flash("there is a problem in the registration and   contact  the  adminstrator")
+   return render_template('register.html', title='register', regform=regform)
+
 
 @app.route('/changepass', methods=['GET' , 'POST'])
 def changepass():
@@ -997,15 +1001,15 @@ def welcome():
                         
                         postUsers  = Database.find("blogs", {})
                         
-                        length     = Database.find("requests"+request.cookies.get('login_email'), {}).count()
+                        length     = Database.find("requests"+request.cookies.get('login_email'), {})
                         
-                        messageRe  = Database.find("requests"+request.cookies.get('login_email'), {}).count()
-                        requests   = Database.find("requests"+request.cookies.get('login_email'), {}).count()
-                        friends    = Database.find("requests"+request.cookies.get('login_email'), {}).count()
-                        requests = (requests - friends)
-                        acccepted  = Database.find("requests"+request.cookies.get('login_email'), {}).count() - length
+                        messageRe  = Database.find("requests"+request.cookies.get('login_email'), {})
+                        requests   = Database.find("requests"+request.cookies.get('login_email'), {})
+                        friends    = Database.find("requests"+request.cookies.get('login_email'), {})
+                        requests = 0
+                        #acccepted  = Database.find("requests"+request.cookies.get('login_email'), {}).count() - length
                         
-                        messages   = Database.find("requests"+request.cookies.get('login_email'),{}).count()
+                        #messages   = Database.find("requests"+request.cookies.get('login_email'),{}).count()
                         
                         userblog   = Database.find("blogs" ,{'email':item['email']})
                         email      = request.cookies.get('login_email') 
